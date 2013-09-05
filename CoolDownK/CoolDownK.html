@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Cool Down Kingston</title>
+    <link href="img/kflaGreen.png" rel="Shortcut Icon">
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content='' name='Kingston parks recreation sports leisure play' />
+    <meta content='' name='City of Kingston' />
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/bootstrap.spacelab.min.css"/>
+    <link rel="stylesheet" href="styles/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="styles/custom.css"/>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+  </head>
+  <body>
+  
+<!-- ========================== Phone Navbar ============================ -->	  
+	<div class="row-fluid visible-phone" id="phoneNav">
+		<div class="span12" id="border" style="padding-top:.65em;">
+			<ul class="inline">
+					<li class="navbar">	
+						<a href="#SearchBar" data-toggle="collapse">
+							<abbr title="Click to toggle the location and recreation search bar">
+								<i class="icon-search icon-white"></i>
+							</abbr>
+						</a>
+					</li>
+					<li class="navbar">	
+						<a href="#ResultsList" data-toggle="collapse">
+							<abbr title="Results">
+								<i class="icon-th-list icon-white"></i>
+							</abbr>
+						</a
+					</li>
+					<li class="navbar">	
+						<a href="#help" data-toggle="collapse" >
+							<abbr title="Click for instructions & additional info">
+								<i class="icon-question-sign icon-white"></i>
+							</abbr>
+						</a
+					</li>
+					
+					<li class="navbar">	
+						<a href="#Authors" data-toggle="collapse" >
+							<abbr title="Data & Application Authors">
+								<i class="icon-info-sign icon-white"></i>
+							</abbr>
+						</a
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	
+<!-- ========================== Navigation Bar ============================ -->
+	<div class="row-fluid hidden-phone">
+		<div class="span12" id="border1">
+			<div>
+			<a id="logo" href="http://www.kflapublichealth.ca/">
+				<img src="img/kflaWhite.png"/>
+			</a>
+			</div>
+			<div style="padding-top:2.4%;">
+				<ul class="inline">
+					<li style="font-size:1.25em;" class="navbar">	
+						<a href="#SearchBar" data-toggle="collapse">
+							<abbr title="Click to toggle the location and recreation search bar">
+								<b>C</b>ool <b>D</b>own <b>K</b>ingston <b>F</b>inder
+							</abbr>
+							<b class="caret"></b>
+						</a>
+					</li>
+					<li class="pull-right navbar">	
+						<a href="#Authors" data-toggle="collapse" >
+							<abbr title="Data & Application Authors">
+								Map Authors
+							</abbr>
+						</a
+					</li>
+					<li class="pull-right navbar">	
+						<a href="#help" data-toggle="collapse" >
+							<abbr title="Click for instructions & additional info">
+								Help
+							</abbr>
+						</a>
+					</li>
+					
+				</ul>
+			</div>
+
+		</div>
+	</div>
+<!-- ========================== Search Bar ============================ -->
+<div id="container">
+	<div id="SearchBar" class="accordion-body collapse in">
+       <div class="row-fluid" style="padding-top:9px;" >
+			<div class="span8">
+				<a href="#" data-toggle="tooltip" title="Find your address or desired location">
+					<input class='span4' id='search_address' placeholder='Location Search' type='text' />
+				</a>
+				
+					<select class='input-large' id='select_type'>
+					  <option value=''>Choose an Amenity</option>
+					  <option value="water">Splash Pads & Wading Pools</option>
+					  <option value="toilets">Washrooms</option>
+					  <option value="convenience">Tap Into Kingston (get water)</option>
+					  <option value="snowflake_simple">Cool Down Here (free AC)</option>
+					</select>
+				
+					
+						<select class='input-small' id='search_radius'>
+						<option value='100'>100 m</option>
+						<option value='250'>250 m</option>
+						<option value='500'>500 m</option>
+						<option value='1000'>1 km</option>
+						</select>
+					
+			</div>
+			
+			<div class="span2">
+				<div class="btn-group">
+					<button class="btn btn-inverse btn disabled" type="button" id='search'>Search</button>
+					<button class='btn disabled greys' id='reset'>Reset</button>
+				</div>
+			</div>
+			
+			
+			<div class="span2">
+			
+				<a href="#ResultsList" data-toggle="collapse">
+					<button class='btn btn-danger disabled hidden-phone pull-right reds' id='result_count' "></button>		
+				</a>
+				
+			</div>
+		</div>
+<!-- ===================================== CLOSE Button ============================================== -->		
+		
+			<div class="row-fluid">
+				<a href="#SearchBar" data-toggle="collapse">
+					<div class="span1 offset5" id="close">
+					<b>x</b>
+					</div>
+				</a>
+			</div>
+		
+<!-- =========================================================================== -->
+	</div>
+  </div>
+</div>
+
+<!-- ==================================== Results =========================================== --> 
+	<div id="ResultsList" class="accordion-body collapse" >
+       <div class="row-fluid" style="padding: 10px 10px 0px 10px;" id="border" >
+	   
+			<div class="span12" id='results_list' style="padding: 0px 25px 0px 25px;"></div>
+			
+<!-- ===================================== CLOSE Button ============================================== -->		
+			<div class="row-fluid">
+				<a href="#ResultsList" data-toggle="collapse">
+					<div class="span1 offset5" id="close">
+					<b>x</b>
+					</div>
+				</a>
+			</div>
+	   
+	   </div>
+	</div>
+ <!-- ==================================== Help =========================================== -->
+	<div id="help" class="accordion-body collapse">
+       <div class="row-fluid" style="padding: 10px 10px 0px 10px;" id="border">
+			<div class="span11">
+				<p><blockquote>
+				<h4>
+				<b>H</b>elp 
+				</h4>
+				<span style="font-size: .85em;">
+					Welcome to the Cool Down Kingston, the app that helps you stay hydrated and cool during extreme heat. Use Location Search to find and zoom to your location (addresses, landmarks & intersections will all work). You can select a specific amenity or change the search radius to make your search more specific. Click on the red results button to see a list of location near you, click on listed location addresses to zoom to the specific location. Click on icons for more info. 
+				</span>
+				</blockquote></p>
+			</div>
+<!-- ===================================== CLOSE Button ============================================== -->		
+			<div class="row-fluid">
+				<a href="#help" data-toggle="collapse">
+					<div class="span1 offset5" id="close">
+					<b>x</b>
+					</div>
+				</a>
+			</div>
+	   </div>
+	   
+	</div>
+	
+<!-- ========================== Map Authors ============================ -->
+	<div id="Authors" class="accordion-body collapse">
+       <div class="row-fluid" style=" padding: 10px 10px 0px 10px;" id="border">
+			<div class="span11">
+				<p><blockquote>
+				<h4>
+					<a href="http://www.kflapublichealth.ca/motiv8/swap/TapIntoKingston.aspx" target="_blank">
+						<b>KFL&A Public Health </b>
+					</a>
+					and the
+					<a href="http://www.cityofkingston.ca/" target="_blank">
+						<b>City of Kingston</b>
+					</a>
+				</h4>
+				<span style="font-size: .85em;">
+						The data within this application is provided and maintained by KFL&A Public Health and the City of Kingston. The application draws data from the 
+							<a href="http://www.kflapublichealth.ca/motiv8/swap/TapIntoKingston.aspx" target="_blank"><abbr title="Tap Into Kingston">Tap Into Kingston Program</abbr></a> 
+						as well as the 
+							<a href="http://www.kflapublichealth.ca/News.aspx?NId=151" target="_blank"><abbr title="Our Site">Cool Down Here program</abbr></a> from KFL&A Public Health. The public Washroom data and the Splash Pad & Wading Pool data was provided by the
+							<a href="http://www.cityofkingston.ca/" target="_blank">
+							City of Kingston
+							</a>
+							<br>
+					<span style="font-size: .90em;"><em>
+					<br>
+						This application was developed by Kingston's GIS department with generous support from the 
+							<a href="http://opencityapps.org/#about" target="_blank">Open City team</a>.
+						Contact the 
+							<a href="http://www.cityofkingston.ca/explore/maps" target="_blank">GIS department</a>
+						to provide technical feedback or to get access to the source code.
+					</em></span>
+				</span>
+				</blockquote></p>
+			</div>
+<!-- ===================================== CLOSE Button ============================================== -->		
+			<div class="row-fluid">
+				<a href="#Authors" data-toggle="collapse">
+					<div class="span1 offset5" id="close">
+					<b>x</b>
+					</div>
+				</a>
+			</div>
+	   </div>
+	   
+	</div>
+<!-- ========================== Content Partners ============================ -->
+	<div id="collapseFour" class="accordion-body collapse">
+       <div class="row-fluid" style=" padding: 10px 10px 0px 10px;" id="border">
+			<div class="span11">
+				<p><blockquote>
+				<h4>
+				<b>C</b>ontent <b>P</b>artners
+				</h4>
+				<span style="font-size: .85em;">
+					Make this application better by becoming a content partner! Owners of local fitness facilities or concerned citizens can 
+					<a href="http://www.cityofkingston.ca/city-hall/contact-us" target="_blank"><abbr title="Contact Us"><b>register</b></abbr></a>
+					to become a Kingston Recreation Content Partner. Adding data is as simple as editing an excel file, check out the 
+					<a href="https://support.google.com/fusiontables/answer/3142015?hl=en&ref_topic=2592841" target="_blank"><abbr title="Tutorial"><b>tutorial</b></abbr></a>
+					for more info on how to add data to this application.
+					If you already registered as a content partner, you can access and edit the application database 
+					<a href="https://www.google.com/fusiontables/DataSource?docid=1K0AigXOsqrAl5Ih8cFe7VNuCfWUBcrhmpmNh6-8#rows:id=1" target="_blank"><abbr title="Access the fusion table"><b>here</b></abbr></a>.
+				</span>
+				</blockquote></p>
+			</div>
+	
+<!-- ======== Close Button ======== -->	
+	   <div class="row-fluid">
+				<div class="span6"></div>
+				<a href="#collapseFour" data-toggle="collapse">
+					<div class="span1" id="close">
+					<b>x</b>
+					</div>
+				</a>
+			</div>
+	   </div>
+	   
+	</div>
+ <!-- ========================== Map Canvas ============================ -->	
+          <div id="border"><div id='map_canvas'></div></div>
+		  
+ <!-- ========================== JScript ============================ -->	
+   
+	<script type="text/javascript" src="source/jquery.js"></script>
+    <script type="text/javascript" src="source/bootstrap.js"></script>
+    <script type="text/javascript" src="source/jquery.address.min.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script type="text/javascript" src="source/jquery.geocomplete.min.js"></script>
+    <script type="text/javascript" src="source/maps_lib.js"></script>
+	<script type="text/javascript" src="source/autocomplete.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="source/jquery.slimscroll.min.js"></script>
+
+	
+	<script type='text/javascript'>
+      //<![CDATA[
+		
+        $(window).resize(function () {
+          var h = $(window).height(),
+            offsetTop = 90; // Calculate the top offset
+        
+          $('#map_canvas').css('height', (h - offsetTop));
+        }).resize();
+        
+        $(function() {
+          MapsLib.initialize();
+		  
+          
+          $(':checkbox').click(function(){
+            MapsLib.doSearch();
+          });
+
+          $(':radio').click(function(){
+            MapsLib.doSearch();
+          });
+          
+          $('#search_radius').change(function(){
+            MapsLib.doSearch();
+          });
+		  
+		  $('#select_type').click(function(){
+            MapsLib.doSearch();
+          });
+		  
+		  $('#results_list').slimScroll({
+				position: 'left',
+				wheelStep: 3,
+				height:200,
+				railVisible: true,
+				alwaysVisible: true
+			});
+          
+          $('#search').click(function(){
+            MapsLib.doSearch();
+          });
+          
+          $('#reset').click(function(){
+            $.address.parameter('address','');
+            MapsLib.initialize(); 
+            return false;
+			
+          });
+		  
+		  $('#reset').click(function() {
+			location.reload(true);
+			});
+			
+			
+          
+          $(":text").keydown(function(e){
+              var key =  e.keyCode ? e.keyCode : e.which;
+              if(key == 13) {
+                  $('#search').click();
+                  return false;
+          }
+          });
+        });
+      //]]>
+    </script>
+	
+  </body>
+</html>
